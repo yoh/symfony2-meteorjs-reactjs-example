@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <p>
+        Hello cowboy, welcome to the ranch !
+    </p>
+
+    <p>
+        <div id="react-poneys-list">
+            {% if poneys %}
+                <div>
+                    <p>There are free poneys :</p>
+                    <ul>
+                        {% for poney in poneys %}
+                            <li>
+                                <a href="{{path('edit_poney', {id: poney.id})}}">
+                                    {{poney.name}}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% else %}
+                <div>
+                    Sorry, the is no free poney :(
+                </div>
+            {% endif %}
+        </div>
+    </p>
+
+{% endblock %}
+
+{% block stylesheets %}
+    {{parent()}}
+{% endblock %}
+
+
+{% block javascripts %}
+    {{parent()}}
+
+    <!-- The core React library -->
+    <script src="https://fb.me/react-0.13.3.js"></script>
+    <!-- In-browser JSX transformer, remove when pre-compiling JSX. -->
+    <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
+    <!-- asteroid -->
+    <script src="bower_components/ddp.js/src/ddp.js"></script>
+    <script src="bower_components/q/q.js"></script>
+    <script src="bower_components/asteroid/dist/asteroid.browser.js"></script>
+
+
+    <!-- asteroid connection -->
+    <script type="text/javascript">
+        asteroid = new Asteroid("localhost:3000");
+    </script>
+
+    <!-- react components -->
+    {% include 'components/poneys.js' %}
+{% endblock %}

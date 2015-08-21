@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <p>
+        Hello cowboy, welcome to the ranch !
+    </p>
+
+    {{ form(form) }}
+
+{% endblock %}
+
+{% block stylesheets %}
+    {{parent()}}
+{% endblock %}
+
+{% block javascripts %}
+    {{parent()}}
+{% endblock %}

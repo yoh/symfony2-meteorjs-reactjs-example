@@ -1,0 +1,31 @@
+<head>
+  <title>realtime</title>
+</head>
+
+<body>
+    <h1>Welcome to the Ranch!</h1>
+    {{> ranch}}
+</body>
+
+<template name="ranch">
+    <div class="ranch">
+        List of poneys :
+
+        <ul>
+            {{#each poneys}}
+                <li>
+                    <input type="checkbox" name="free" id="free_{{_id}}" {{checked}}>
+                    <label for="free_{{_id}}" class="name">{{this.name}}</label>
+                    <span class="remove">[x]</span>
+                </li>
+            {{/each}}
+
+            <li>
+                <form id="add" method="post">
+                    <input type="text" name="name" value="" placeholder="name" />
+                    <input type="submit" value="+" />
+                </form>
+            </li>
+        </ul>
+    </div>
+</template>

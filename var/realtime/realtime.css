@@ -1,0 +1,13 @@
+/* CSS declarations go here */
+.ranch ul li .name{
+    font-weight: bold;
+}
+.ranch ul li .remove{
+    display: none;
+    margin-left: 1em;
+    color: red;
+    cursor: pointer;
+}
+.ranch ul li:hover .remove{
+    display: inline-block;
+}
