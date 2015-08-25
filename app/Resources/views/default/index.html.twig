@@ -1,39 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <p>
-        Hello cowboy, welcome to the ranch !
-    </p>
-
-    <p>
-        <div id="react-poneys-list">
-            {% if poneys %}
-                <div>
-                    <p>There are free poneys :</p>
-                    <ul>
-                        {% for poney in poneys %}
-                            <li>
-                                <a href="{{path('edit_poney', {id: poney.id})}}">
-                                    {{poney.name}}
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            {% else %}
-                <div>
-                    Sorry, the is no free poney :(
-                </div>
-            {% endif %}
-        </div>
-    </p>
-
-{% endblock %}
-
-{% block stylesheets %}
     {{parent()}}
-{% endblock %}
 
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+            {% include '::pony/free_ponies.html.twig' with {ponies: freePonies} only %}
+            {% include '::pony/busy_ponies.html.twig' with {ponies: busyPonies} only %}
+        </div>
+        <div class="pure-u-1-2">
+            {% include '::pony/all_ponies.html.twig' with {ponies: allPonies} only %}
+        </div>
+    </div>
+{% endblock %}
 
 {% block javascripts %}
     {{parent()}}
@@ -47,12 +26,18 @@
     <script src="bower_components/q/q.js"></script>
     <script src="bower_components/asteroid/dist/asteroid.browser.js"></script>
 
+    <!-- Ponies components -->
+    <script type="text/jsx" src="{{ asset('js/components/base/reactive-list.js') }}"></script>
+    <script type="text/jsx" src="{{ asset('js/components/ponies/free-ponies.js') }}"></script>
+    <script type="text/jsx" src="{{ asset('js/components/ponies/busy-ponies.js') }}"></script>
+    <script type="text/jsx" src="{{ asset('js/components/ponies/all-ponies.js') }}"></script>
+    <script type="text/jsx">
+        var asteroid = new Asteroid("localhost:3000");
+        React.render(<FreePonies asteroid={asteroid} />, document.getElementById('react-ponies-free-ponies'));
+        React.render(<BusyPonies asteroid={asteroid} />, document.getElementById('react-ponies-busy-ponies'));
 
-    <!-- asteroid connection -->
-    <script type="text/javascript">
-        asteroid = new Asteroid("localhost:3000");
+        // need new connection, else there is collision :(
+        var asteroid2 = new Asteroid("localhost:3000");
+        React.render(<AllPonies asteroid={asteroid2} />, document.getElementById('react-ponies-all-ponies'));
     </script>
-
-    <!-- react components -->
-    {% include 'components/poneys.js' %}
 {% endblock %}

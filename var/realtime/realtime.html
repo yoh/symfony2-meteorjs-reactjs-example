@@ -1,18 +1,19 @@
 <head>
-  <title>realtime</title>
+    <title>Meteor Ranch</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 </head>
 
 <body>
-    <h1>Welcome to the Ranch!</h1>
+    <h4>Welcome to the Ranch (MeteorJs app) !</h4>
     {{> ranch}}
 </body>
 
 <template name="ranch">
     <div class="ranch">
-        List of poneys :
+        All ponies :
 
         <ul>
-            {{#each poneys}}
+            {{#each ponies}}
                 <li>
                     <input type="checkbox" name="free" id="free_{{_id}}" {{checked}}>
                     <label for="free_{{_id}}" class="name">{{this.name}}</label>

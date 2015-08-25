@@ -5,9 +5,9 @@ namespace AppBundle\Document;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 
 /**
- * @MongoDB\Document(collection="poneys")
+ * @MongoDB\Document(collection="ponies")
  */
-class Poney
+class Pony
 {
     /**
      * @MongoDB\Id(name="_id", strategy="ALNUM")
