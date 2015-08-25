@@ -1,5 +1,6 @@
 # How to easily add realtime on your app (symfony2 + meteorjs + reactjs example)
 
+![example](doc/symfony2-meteorjs-reactjs-example.gif)
 
 ## Technologies
 - symfony2 (or whatever) to serve the website/app
@@ -24,7 +25,7 @@
 
 ## Installation
 ```
-$ git clone git@github.com:yoh/symfony2-meteorjs-reactjs-example.git
+$ git clone git@github.com:Elao/symfony2-meteorjs-reactjs-example.git
 $ cd symfony2-meteorjs-reactjs-example
 $ composer install
 ```
