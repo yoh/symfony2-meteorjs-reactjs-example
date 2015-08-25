@@ -2,13 +2,26 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}Welcome to the ♘ Ranch (sf2 app) !{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+            <style>
+                iframe{
+                    margin: 2em 0;
+                    border: 0;
+                    border-top: dashed 5px;
+                }
+            </style>
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}
+        {% block body %}
+            <h3>{{block('title')}}</h3>
         {% endblock %}
+
+        <iframe src="//{{app.request.server.get('REMOTE_ADDR')}}:3000" width="100%" height="300px"></iframe>
+
+        {% block javascripts %}{% endblock %}
     </body>
 </html>

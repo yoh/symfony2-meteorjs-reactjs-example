@@ -1,11 +1,25 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <p>
-        Hello cowboy, welcome to the ranch !
-    </p>
+    {{parent()}}
 
-    {{ form(form) }}
+    {{form_start(form, {attr: {class: "pure-form pure-form-aligned"}})}}
+    <!-- <form class="pure-form pure-form-aligned"> -->
+        <fieldset>
+            <div class="pure-control-group">
+                {{form_label(form.name)}}
+                {{form_widget(form.name)}}
+            </div>
+
+            <div class="pure-controls">
+                {{form_widget(form.free)}}
+                {{form_label(form.free)}}
+            </div>
+            <div class="pure-controls">
+                {{form_widget(form.save, {attr: {class: "pure-button pure-button-primary"}})}}
+            </div>
+        </fieldset>
+    {{form_end(form)}}
 
 {% endblock %}
 

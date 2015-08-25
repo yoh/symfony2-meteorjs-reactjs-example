@@ -1,0 +1,18 @@
+<div id="react-ponies-free-ponies">
+    {% if ponies %}
+        <div>
+            <h4>There are free ponies :</h4>
+            <ul>
+                {% for pony in ponies %}
+                    <li>
+                        <a href="{{path('edit_pony', {id: pony.id})}}">
+                            {{pony.name}}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% else %}
+        <h4>Sorry, there is no free pony :(</h4>
+    {% endif %}
+</div>

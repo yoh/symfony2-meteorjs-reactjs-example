@@ -1,0 +1,28 @@
+<div id="react-ponies-all-ponies">
+    <table class="pure-table pure-table-horizontal pure-table-striped">
+        <thead>
+            <tr>
+                <th>Pony</th>
+                <th>Free</th>
+                <th>Busy</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pony in ponies %}
+                <tr>
+                    <td>
+                        <a href="{{path('edit_pony', {id: pony.id})}}">
+                            {{pony.name}}
+                        </a>
+                    </td>
+                    <td>
+                        {{pony.free ? "✔" : ""}}
+                    </td>
+                    <td>
+                        {{not pony.free ? "✘" : ""}}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
