@@ -5,7 +5,7 @@
 - symfony2 (or whatever) to serve the website/app
 - MeteorJs to easily publish reactive data
 - ReactJs to easily build reactive components
-- Asteroid to subscribe to the meteor publications from the browser
+- Asteroid to subscribe to the meteor publications from reactive components
 - MongoDb to store data
 
 ## Main Principes
