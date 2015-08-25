@@ -2,6 +2,8 @@
 
 ![example](doc/symfony2-meteorjs-reactjs-example.gif)
 
+![example](doc/symfony2-meteorjs-reactjs-example.png)
+
 ## Technologies
 - symfony2 (or whatever) to serve the website/app
 - MeteorJs to easily publish reactive data
