@@ -59,5 +59,5 @@ Go to http://127.0.0.1:8000 !
 - Controller : `src/AppBundle/Controller/DefaultController.php`
 - Views : `app/Resources/views`
 - Model : `src/AppBundle/Document/Pony.php`
-- ReactJs : `web/js/components`
+- ReactJs components : `web/js/components`
 - MeteorJs app : `var/realtime`
