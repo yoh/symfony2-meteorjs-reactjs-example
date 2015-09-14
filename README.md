@@ -1,5 +1,8 @@
 # How to easily add realtime on your app (symfony2 + meteorjs + reactjs example)
 
+![example](doc/symfony2-meteorjs-reactjs-example.gif)
+
+![example](doc/symfony2-meteorjs-reactjs-example.png)
 
 ## Technologies
 - symfony2 (or whatever) to serve the website/app
@@ -24,7 +27,7 @@
 
 ## Installation
 ```
-$ git clone git@github.com:yoh/symfony2-meteorjs-reactjs-example.git
+$ git clone git@github.com:Elao/symfony2-meteorjs-reactjs-example.git
 $ cd symfony2-meteorjs-reactjs-example
 $ composer install
 ```
@@ -51,3 +54,10 @@ $ cd var/realtime && meteor
 ```
 
 Go to http://127.0.0.1:8000 !
+
+## Where everything happens
+- Controller : `src/AppBundle/Controller/DefaultController.php`
+- Views : `app/Resources/views`
+- Model : `src/AppBundle/Document/Pony.php`
+- ReactJs components : `web/js/components`
+- MeteorJs app : `var/realtime`
